@@ -49,8 +49,10 @@
       </div>
     </div>
   <% else %>
-    <h3>There is currently no item in your cart!</h3>
-    <%= link_to 'Back to Shopping', products_path %>
+    <br/>
+    <h3>There are currently no item in your cart!</h3>
+    <br/>
+    <%= link_to 'Back to Shopping', products_path, class: 'btn btn-lg btn-primary' %>
   <% end %>
 
 </section>

@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   
   resources :about, only: [:index]
 
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  resource :login, only: [:show]
+
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 

@@ -43,10 +43,22 @@
           </ul>
         </li>
         <li>
-          <%= link_to cart_path do %>
-            <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
+        <%= link_to cart_path do %>
+          <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           <% end %>
         </li>
+        <li>
+          <% if session[:user_id] then %>
+            <%= link_to 'Logout', :logout %>
+          <% else %>
+            <%= link_to 'Login', :login %>
+          <% end %>
+        </li>
+        <% if !session[:user_id] then %>
+          <li>
+            <%= link_to 'Sign Up', :signup %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

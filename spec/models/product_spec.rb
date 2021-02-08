@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Product, type: :model do
+RSpec.describe Product, type: :model do
 
   before(:each) do
     @cate = Category.new(name: "misc.")

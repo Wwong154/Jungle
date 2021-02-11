@@ -4,18 +4,18 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 ## What info does this project provide to you about me?
 
-Shown a basic understanding of Ruby
-Shown a basic understanding of Rails
-Shown a basic understanding of Rspec
-Shown a basic understanding of Capybara
+* Shown a basic understanding of Ruby
+* Shown a basic understanding of Rails
+* Shown a basic understanding of Rspec
+* Shown a basic understanding of Capybara
 
 ## How does this project work?
 
-User can view all products
-User can add products to cart
-User can login / logout and register
-User can checkout
-Admin can add category and product
+* User can view all products
+* User can add products to cart
+* User can login / logout and register
+* User can checkout
+* Admin can add category and product
 
 ## Setup
 

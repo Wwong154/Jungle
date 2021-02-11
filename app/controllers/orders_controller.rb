@@ -5,7 +5,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    charge = perform_stripe_charge
+    if session[:user_id] then
+      @login = User.find(session[:user_id])
+    end
+    charge = perform_stripe_charge(@login)
     order  = create_order(charge)
 
     if order.valid?
@@ -26,13 +29,22 @@ class OrdersController < ApplicationController
     update_cart({})
   end
 
-  def perform_stripe_charge
-    Stripe::Charge.create(
-      source:      params[:stripeToken],
-      amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
-      currency:    'cad'
-    )
+  def perform_stripe_charge(login)
+    if login then
+      Stripe::Charge.create(
+        source:      params[:stripeToken],
+        amount:      cart_subtotal_cents,
+        description:  login.first_name + " " + login.last_name + "'s Jungle Order" ,
+        currency:    'cad'
+      )
+    else
+      Stripe::Charge.create(
+        source:      params[:stripeToken],
+        amount:      cart_subtotal_cents,
+        description: "Your Jungle Order",
+        currency:    'cad'
+      )
+    end
   end
 
   def create_order(stripe_charge)

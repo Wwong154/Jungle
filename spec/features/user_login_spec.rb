@@ -18,9 +18,9 @@ RSpec.feature "UserLogins", type: :feature, js: true do
     sleep(1)
     expect(page).to have_content('Logout')
     # commented out b/c it's for debugging only
-    save_screenshot 'login.png'
+    # save_screenshot 'login.png'
     find("a", :text => "Logout").click
     sleep(1)
-    save_screenshot 'logout.png'
+    # save_screenshot 'logout.png'
   end
 end

@@ -40,18 +40,15 @@
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-amount="<%= cart_subtotal_cents %>"
             data-name="Jungle"
-            <%= user = if session[:user_id] then
-              User.find(session[:user_id])
-            end %>
-            data-description= "<%= if user then
-              user.first_name + " " + user.last_name + "'s Jungle Order" 
+            data-description= "<%= if @user then
+              @user.first_name + " " + @user.last_name + "'s Jungle Order" 
               else
               "Your Jungle Order"
               end
               %>"
             data-locale="auto"
-            data-email="<%= if user then 
-              user.email
+            data-email="<%= if @user then 
+              @user.email
               else
               end %>"
             data-currency="cad">

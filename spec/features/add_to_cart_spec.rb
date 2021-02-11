@@ -24,6 +24,6 @@ RSpec.feature "AddToCarts", type: :feature, js: true do
     sleep(1)
     expect(page).to have_content('My Cart (1)')
     # commented out b/c it's for debugging only
-    save_screenshot 'add_cart.png'
+    # save_screenshot 'add_cart.png'
   end
 end

@@ -19,15 +19,17 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     visit :products
     first('footer > a').click
     sleep(1)
+    expect(page).to have_content('Quantity')
     # commented out b/c it's for debugging only
-    save_screenshot 'pro_detail.png'
+    # save_screenshot 'pro_detail.png'
   end
 
   scenario "Click on first product header" do
     visit :products
     first('article > header').click
     sleep(1)
+    expect(page).to have_content('Quantity')
     # commented out b/c it's for debugging only
-    save_screenshot 'pro_detail2.png'
+    # save_screenshot 'pro_detail2.png'
   end
 end
